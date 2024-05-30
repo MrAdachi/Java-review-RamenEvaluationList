@@ -1,5 +1,6 @@
 package practice;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class RamenList {
 		changeramenitem.setPrefecture(prefecture);
 		changeramenitem.setScore(score);
 		changeramenitem.setRecommend_menu(recommend_menu);
+		changeramenitem.setUpdate_time();
 	}
 	
 	// 削除
@@ -51,7 +53,10 @@ public class RamenList {
 		int count = 0;
 		
 		for(RamenItem ramenitem : RamenItems) {
+			// フォーマットの指定
+			DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 			System.out.println(count + "・・・　店舗名：" + ramenitem.getStoreName() + "　都道府県：" + ramenitem.getPrefecture() + "　評価点：" + ramenitem.getScore() + "点　おすすめメニュー：" + ramenitem.getRecommend_menu());
+			System.out.println("　　　　 登録日時：" + ramenitem.getAdd_time().format(f) + "　更新日時：" + ramenitem.getUpdate_time().format(f));
 			count ++;
 		}
 	}
