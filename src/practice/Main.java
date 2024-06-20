@@ -13,13 +13,13 @@ public class Main {
 		System.out.println("☆☆☆☆☆☆☆店舗評価アプリ☆☆☆☆☆☆☆");
 		System.out.println("☆☆☆☆☆☆登録店舗は0件です☆☆☆☆☆☆");
 		
-		RamenList ramenlist = new RamenList();
+		RamenList ramenList = new RamenList();
 		
 		int operation = 0;
-		String store_name = null;
+		String storeName = null;
 		String prefecture = null;
 		int score = 0;
-		String recommend_menu = null;
+		String recommendMenu = null;
 		int index = 0;
 		
 		// 操作
@@ -32,15 +32,15 @@ public class Main {
 			// 登録
 			if (operation == 1) {
 				System.out.print("評価する店舗を入力してください ＞ ");
-				store_name = br.readLine();
+				storeName = br.readLine();
 				System.out.print("店舗の都道府県を入力してください ＞ ");
 				prefecture = br.readLine();
 				System.out.print("評価点を0～100点の間で入力してください ＞ ");
 				score = Integer.parseInt(br.readLine());
 				System.out.print("おすすめメニューを入力してください ＞ ");
-				recommend_menu = br.readLine();
+				recommendMenu = br.readLine();
 				
-				ramenlist.addItem(store_name, prefecture, score, recommend_menu);
+				ramenList.addItem(storeName, prefecture, score, recommendMenu);
 				
 				System.out.println("1件登録しました");
 				
@@ -53,9 +53,9 @@ public class Main {
 				System.out.print("評価点を0～100点の間で入力してください ＞ ");
 				score = Integer.parseInt(br.readLine());
 				System.out.print("おすすめメニューを入力してください ＞ ");
-				recommend_menu = br.readLine();
+				recommendMenu = br.readLine();
 				
-				ramenlist.changeItem(index, prefecture, score, recommend_menu);
+				ramenList.changeItem(index, prefecture, score, recommendMenu);
 				
 				System.out.println("1件変更しました");
 			
@@ -64,7 +64,7 @@ public class Main {
 				System.out.print("削除する店舗の番号を入力してください ＞ ");
 				index = Integer.parseInt(br.readLine());
 				
-				ramenlist.removeItem(index);
+				ramenList.removeItem(index);
 				
 				System.out.println("1件削除しました");
 				
@@ -73,7 +73,7 @@ public class Main {
 				break;
 			}
 			
-			ramenlist.displayItem();
+			ramenList.displayItem();
 			
 			System.out.println();
 		}

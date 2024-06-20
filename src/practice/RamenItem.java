@@ -5,22 +5,22 @@ import java.time.LocalDateTime;
 public class RamenItem {
 	
 	// インスタンス変数の定義
-	private String store_name;
+	private String storeName;
 	private String prefecture;
 	private int score;
-	private String recommend_menu;
-	private LocalDateTime add_time;
-	private LocalDateTime update_time;
+	private String recommendMenu;
+	private LocalDateTime createTime;
+	private LocalDateTime updateTime;
 	
 	// コンストラクタ
 	public RamenItem(String store_name, String prefecture, int score, String recommend_menu) {
 		// 評価情報の登録
-		this.store_name = store_name;
+		this.storeName = store_name;
 		this.prefecture = prefecture;
 		this.score = score;
-		this.recommend_menu = recommend_menu;
-		this.add_time = LocalDateTime.now(); 
-		this.update_time = LocalDateTime.now(); 
+		this.recommendMenu = recommend_menu;
+		this.createTime = LocalDateTime.now(); 
+		this.updateTime = LocalDateTime.now(); 
 	}
 
 	// 情報更新
@@ -32,17 +32,18 @@ public class RamenItem {
 		this.score = score;
 	}
 	
-	public void setRecommend_menu(String recommend_menu) {
-		this.recommend_menu = recommend_menu;
+
+	public void setRecommendMenu(String recommendMenu) {
+		this.recommendMenu = recommendMenu;
 	}
-	
-	public void setUpdate_time() {
-		this.update_time = LocalDateTime.now(); 
+
+	public void setUpdateTime() {
+		this.updateTime = LocalDateTime.now(); 
 	}
-	
+
 	// 情報取得
 	public String getStoreName() {
-		return store_name;
+		return storeName;
 	}
 	
 	public String getPrefecture() {
@@ -52,16 +53,16 @@ public class RamenItem {
 	public int getScore() {
 		return score;
 	}
-	
-	public String getRecommend_menu() {
-		return recommend_menu;
+
+	public String getRecommendMenu() {
+		return recommendMenu;
 	}
 
-	public LocalDateTime getAdd_time() {
-		return add_time;
+	public LocalDateTime getCreateTime() {
+		return createTime;
 	}
-	
-	public LocalDateTime getUpdate_time() {
-		return update_time;
+
+	public LocalDateTime getUpdateTime() {
+		return updateTime;
 	}
 }
